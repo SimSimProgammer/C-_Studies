@@ -1,0 +1,22 @@
+1. Question 1008 - printing A/B w/ 10^-9 accuracy
+
+   To increase accuracy you must: (
+   - set input digits higher (ex. float -> double) 
+     > C sets the output of calculations in the same format as the input
+   - set output digits higher
+   - use std::cout.precision(digit_num) (ex. precision(7) -> 0.09834538)
+   
+2. Question 2588 - printing out A * B (3 digits each) with product of each digit in B
+
+   I need to split B into the number of each digit (ex. 678 -> 6, 7, 8)
+   First, to get the # of digits in B: 
+      a) len = std::to_string(B).length() -> this phrase becomes the length of B (in this case '3')
+   Then,
+      int digit;
+      for (i=1; i<=len; i++) {
+         digit = B/10^(len-i)%10  //(ex. 678/100%10 = 6 which is the first digit)
+         //use the digit for whatever
+       }
+    If you need to keep every digit seperately, use pop to put them into a list.
+    
+ 3. 
